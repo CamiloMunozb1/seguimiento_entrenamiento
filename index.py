@@ -1,3 +1,9 @@
+from funciones.ingreso_user import IngresoDB, IngresoUsuario
+
+
+ruta_db = r"tu_ruta_db"
+conexion = IngresoDB(ruta_db)
+
 
 while True:
     print("""
@@ -12,7 +18,8 @@ while True:
             print("Debes indicar una opcion.")
             break
         elif usuario == "1":
-            print("Proxima opcion.")
+            registro = IngresoUsuario(conexion)
+            registro.registro_usuario()
         elif usuario == "2":
             print("Proxima opcion.")
         elif usuario == "3":
