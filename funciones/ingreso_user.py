@@ -60,6 +60,6 @@ class IngresoUsuario:
             print(f"Error en el programa: {error}.")
 
 
-ruta_db = r"tu_ruta_db"
+ruta_db = r"TU_RUTA_DB"
 conexion = IngresoDB(ruta_db)
 

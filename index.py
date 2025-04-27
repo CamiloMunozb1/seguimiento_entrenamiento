@@ -1,7 +1,8 @@
 from funciones.ingreso_user import IngresoDB, IngresoUsuario
+from funciones.login_usuario import IngresoDB, LoginUsuario
 
 
-ruta_db = r"tu_ruta_db"
+ruta_db = r"TU_RUTA_DB"
 conexion = IngresoDB(ruta_db)
 
 
@@ -21,7 +22,8 @@ while True:
             registro = IngresoUsuario(conexion)
             registro.registro_usuario()
         elif usuario == "2":
-            print("Proxima opcion.")
+            login = LoginUsuario(conexion)
+            login.ingreso_usuario()
         elif usuario == "3":
             print("Gracias por ingresar al seguimiento de entrenamiento.")
             break
