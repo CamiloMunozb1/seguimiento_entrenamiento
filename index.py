@@ -2,7 +2,7 @@ from funciones.ingreso_user import IngresoDB, IngresoUsuario
 from funciones.login_usuario import IngresoDB, LoginUsuario
 
 
-ruta_db = r"TU_RUTA_DB"
+ruta_db = r"TU_BASE_DATOS"
 conexion = IngresoDB(ruta_db)
 
 
@@ -23,7 +23,9 @@ while True:
             registro.registro_usuario()
         elif usuario == "2":
             login = LoginUsuario(conexion)
-            login.ingreso_usuario()
+            password_id = login.ingreso_usuario()
+            if password_id:
+                login.ejecutar_opciones()
         elif usuario == "3":
             print("Gracias por ingresar al seguimiento de entrenamiento.")
             break
