@@ -2,7 +2,7 @@ from funciones.ingreso_user import IngresoDB, IngresoUsuario
 from funciones.login_usuario import IngresoDB, LoginUsuario
 
 
-ruta_db = r"TU_BASE_DATOS"
+ruta_db = r"TU_DATA_BASE"
 conexion = IngresoDB(ruta_db)
 
 

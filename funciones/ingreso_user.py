@@ -41,18 +41,21 @@ class IngresoUsuario:
                 print("Contraseña no valida, ingresa una valida.")
                 return
             
+            
+            self.conexion.cursor.execute("SELECT 1 FROM usuario_password WHERE email_usuario = ?",(self.email_usuario,))
+            if self.conexion.cursor.fetchone():
+                print("Este correo ya se registro.")
+                return
+            
             self.conexion.cursor.execute("INSERT INTO usuario_datos(nombre_usuario,apellido_usuario) VALUES(?,?)",(self.nombre_usuario,self.apellido_usuario))
             self.conexion.conn.commit()
 
-            self.conexion.cursor.execute("SELECT usuario_id FROM usuario_datos WHERE nombre_usuario = ?",(self.nombre_usuario,))
-            usuario = self.conexion.cursor.fetchone()
-            if usuario:
-                usuario_id = usuario[0]
-                self.conexion.cursor.execute("INSERT INTO usuario_password(email_usuario,password_usuario, usuario_id) VALUES(?,?,?)",(self.email_usuario,encriptador_password,usuario_id))
-                self.conexion.conn.commit()
-                print("Datos registrados exitosamente.")
-            else:
-                print("Usuario no encontrado.")
+            usuario_id = self.conexion.cursor.lastrowid
+
+            self.conexion.cursor.execute("INSERT INTO usuario_password(email_usuario,password_usuario, usuario_id) VALUES(?,?,?)",(self.email_usuario,encriptador_password,usuario_id))
+            self.conexion.conn.commit()
+            print("Datos registrados exitosamente.")
+
 
         except sqlite3.Error as error:
             print(f"Error en la base de datos: {error}.")
@@ -60,6 +63,6 @@ class IngresoUsuario:
             print(f"Error en el programa: {error}.")
 
 
-ruta_db = r"TU_BASE_DATOS"
+ruta_db = r"TU_DATA_BASE"
 conexion = IngresoDB(ruta_db)
 
