@@ -36,10 +36,15 @@ Este es un proyecto en Python para gestionar rutinas de entrenamiento y peso de 
 1. Ejecuta el sistema
 2. El usuario inicia sesión con correo y contraseña.
 3. Si los datos son correctos, puede:
+   
        - Registrar su rutina y peso.
+   
        - Actualizar su rutina.
+   
        - Actualizar su peso.
+   
        - Ver toda la información guardada.
+   
        - Cerrar sesión.
 
 ## Seguridad
