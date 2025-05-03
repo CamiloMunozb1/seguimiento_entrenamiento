@@ -26,7 +26,7 @@ Este es un proyecto en Python para gestionar rutinas de entrenamiento y peso de 
 2. Instala las dependencias necesarias:
 
 
-     pip install bcrypt pandas
+       pip install bcrypt pandas
 
 
 3. Crea la base de datos si no existe.
