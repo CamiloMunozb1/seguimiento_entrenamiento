@@ -1,6 +1,6 @@
 # 🏋️‍♂️ Gestor de Rutinas y Peso
 
-Este es un proyecto en Python para gestionar rutinas de entrenamiento y peso de usuarios. Permite a los usuarios registrarse, iniciar sesión de forma segura con contraseña encriptada y realizar operaciones CRUD sobre sus rutinas personales.
+Este es un proyecto en Python para gestionar rutinas de entrenamiento y peso de usuarios. Permite a los usuarios registrarse, iniciar sesión de forma segura con contraseña encriptada y realizar operaciones CRUD sobre sus rutinas personales. (Proyecto en actualizacion)
 
 ## 📦 Características
 
